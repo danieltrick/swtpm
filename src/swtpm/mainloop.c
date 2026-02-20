@@ -147,6 +147,9 @@ int mainLoop(struct mainLoopParams *mlp, int notify_fd, bool tpm_running)
 
     TPM_DEBUG("mainLoop:\n");
 
+    fputs("TPM emulator has entered mainLoop !!!\n", stdout);
+    fflush(stdout);
+
     max_command_length = tpmlib_get_tpm_property(TPMPROP_TPM_BUFFER_MAX) +
                          sizeof(struct tpm2_send_command_prefix);
 
